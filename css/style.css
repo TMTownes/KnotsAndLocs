@@ -1,7 +1,7 @@
 
 *{
     box-sizing:border-box;
-    margin: 16px;
+    margin: 20px;
     padding: 0;
 }
 
@@ -9,22 +9,30 @@
     --primary-color: brown;
 }
 
+
+.page-header {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+
+/*h1*/
 .app-header {
-    position:sticky;
-    top: 60%;
-    left: 90%;
+    position: sticky;
+    margin: 80px;
+    top: -50%;
+    left: 100%;
     transform: translate(-50%, -50%);
     color: var(--primary-color);
     font-size: 60px;
-    float: right;
 }
 
 .page__allBraids {
-    justify-content:center;
-    align-items: center;
-    width: auto;
-    height: 125px;
-    margin: 0;
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    z-index: 0;
+    
 }
 
 .body {
@@ -33,7 +41,7 @@
 
 .style__item {
     display: inline-block;
-    margin: 30%;
+    margin: 20%;
 }
 
 .hide {
@@ -51,7 +59,8 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 10px;
-        margin: 16px;
+        margin: 20px;
+        padding: 10px;
     }
     
     .style__item {

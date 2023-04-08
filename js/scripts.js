@@ -1,16 +1,46 @@
-let styleList = [
+
+//List of Hairstyles
+let styleRepository = (function () {
+  let styleList = [
     {name:'Knotless', price: 150, type: 'braids'},
     {name:'Locs', price: 245, type: 'twists'},
-    {name: 'Feed In', price: 130, type: ['braids',' cornrows']},
+    {name: 'Feed In', price: 130, type: ['braids',' cornrows']}
+  ];  
+    return{
+        //add check for correct formatting
+       add: function (list) {
+            styleList.push(list);
+        },
+        getAll: function() {
+            return styleList;
+        }
+        //add 'remove' function
+    };
+})();
+console.log(styleRepository.getAll());
+styleRepository.add({name:'Dreads', price: 1000, type: 'twists'});
+console.log(styleRepository.styleList);
 
 
-];
 
+
+// Obejct.keys(someObject)- displays array of all properties
+
+//Alert for styles over $200
 let priceAlert = '<p class= "hide">' + 'Wow, that\'s expensive!' + '</p>';
 
-for (i = 0; i<= styleList.length; i++){
-    document.write('<div class= "style__item">' + '<h2>' + styleList[i].name+ '</h2>' + '<h5>' +styleList[i].type + '</h5>' + '<p>' +'Price: $' + styleList[i].price + '</p>' + '</div>');
-    if (styleList[i].price > 200) {
+
+
+// forEach() function replacing for loop. Prints any array classified as 'list'
+function printArrayDetails(list){
+        document.write('<div class= "style__item">' + '<h2>' + list.name + '</h2>' + '<h5>' +list.type + '</h5>' + '<p>' +'Price: $' + list.price + '</p>' + '</div>');
+    if (list.price > 200){
         document.write(priceAlert);
     }
-};
+    };
+
+styleRepository.getAll().forEach(printArrayDetails);
+
+
+
+

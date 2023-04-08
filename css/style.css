@@ -13,26 +13,24 @@
 .page-header {
     display: flex;
     width: 100%;
-    padding: 10px;
+    padding: 20px;
 }
 
 /*h1*/
 .app-header {
-    flex: 0 1 400px;
-    margin: 135px;
-    /* top: 50%;
-    left: 100%; */
+    position: sticky;
+    margin: 80px;
+    top: -50%;
+    left: 100%;
     transform: translate(-50%, -50%);
     color: var(--primary-color);
     font-size: 60px;
 }
 
-.page__allBraids-img {
-    flex-grow: 0;
-    width: 250px;
-    height: 200px;
-    margin: 0;
-    padding: auto;
+.page__allBraids {
+    width: 300px;
+    height: auto;
+    margin: 10px;
     z-index: 0;
     
 }
@@ -61,7 +59,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 10px;
-        margin: 10px;
+        margin: 20px;
         padding: 10px;
     }
     
@@ -72,8 +70,8 @@
         margin: 0;
     }
     .style__item:last-child {
-        grid-column: 3/3;
-        grid-row: initial;
+        grid-column: inherit;
+        grid-row: inherit;
     }
 
 }

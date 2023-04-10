@@ -9,7 +9,11 @@ let styleRepository = (function () {
     return{
         //add check for correct formatting
        add: function (list) {
-            styleList.push(list);
+            if (typeof "object"){
+                styleList.push(list);
+            }else {
+                console.log("Incorrect data");
+            }
         },
         getAll: function() {
             return styleList;

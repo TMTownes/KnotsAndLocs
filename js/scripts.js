@@ -38,7 +38,7 @@ let styleRepository = (function () {
         add: add,
         getAll: getAll,
         addListItem: addListItem
-    };
+    }
   })();
   console.log(styleRepository.getAll());
   styleRepository.add({ name: "Dreads", price: 1000, type: "twists" });

@@ -7,6 +7,7 @@
 
 :root {
     --primary-color: brown;
+    --secondary-color: darkgoldenrod;
 }
 
 
@@ -41,10 +42,35 @@
     background-color: bisque;
 }
 
+/* .styles {
+    background-color: var(--primary-color);
+} */
+
+.style-button {
+    background-color: antiquewhite;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /*Safari?*/
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid var(--primary-color);
+}
+
 .style__item {
     display: inline-block;
-    margin: 20%;
+    margin: 10px;
+
 }
+/* 
+li{
+    border: 5px white solid;
+} */
 
 .hide {
     display: none;
@@ -54,22 +80,22 @@
     display: block;
     color: red;
 }
-
+/* 
 @supports (display: grid){
     
     .styles {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px;
+        gap: 20px;
         margin: 10px;
-        padding: 10px;
+        padding: 20px;
     }
     
     .style__item {
         background-color: var(--primary-color);
         width: auto;
         min-height: auto;
-        margin: 0;
+        margin: 10px;
     }
     .style__item:last-child {
         grid-column: 3/3;
@@ -102,4 +128,4 @@
         font-size: 22px;
     }
 }
-
+ */

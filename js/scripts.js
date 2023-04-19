@@ -25,9 +25,18 @@ let styleRepository = (function () {
           let listItem = document.createElement("li");
           let button = document.createElement("button");
           button.innerText = styles.name;
+          button.addEventListener('click', function(){
+            showDetails(styles);
+          });
+
+          // button.innerHTML = '<button class="show-more">Show More</button>'
           button.classList.add("style-button");
           listItem.appendChild(button);
           styleList.appendChild(listItem);
+      }
+
+      function showDetails(styles){
+        console.log(styles);
       }
 
       function getAll() {
@@ -37,7 +46,8 @@ let styleRepository = (function () {
       return {
         add: add,
         getAll: getAll,
-        addListItem: addListItem
+        addListItem: addListItem,
+        showDetails: showDetails
     }
   })();
   console.log(styleRepository.getAll());
@@ -47,6 +57,8 @@ let styleRepository = (function () {
   styleRepository.getAll().forEach(function(styles){
     styleRepository.addListItem(styles);
   }); 
+  
+  //Show more information
   
   
   // Obejct.keys(someObject)- displays array of all properties

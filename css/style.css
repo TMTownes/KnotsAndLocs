@@ -81,7 +81,7 @@
     .hairstyles {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 0px;
         margin: 0px;
         padding: 10px;
     }

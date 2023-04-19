@@ -25,14 +25,18 @@ let styleRepository = (function () {
           let listItem = document.createElement("li");
           let button = document.createElement("button");
           button.innerText = styles.name;
-          button.addEventListener('click', function(){
-            showDetails(styles);
-          });
-
           // button.innerHTML = '<button class="show-more">Show More</button>'
           button.classList.add("style-button");
           listItem.appendChild(button);
           styleList.appendChild(listItem);
+          addButtonListener(button, styles);
+      }
+
+      //Event to show more details from listItem button
+      function addButtonListener (button, styles) {
+        button.addEventListener('click', function(){
+            showDetails(styles);
+          });
       }
 
       function showDetails(styles){

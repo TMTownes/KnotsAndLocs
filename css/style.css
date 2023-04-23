@@ -69,7 +69,7 @@
     opacity: .8;
 }
 
-.hairstyles {
+#hairstyles {
     background-image: url("./img/wooden-background2.avif");
     background-color: #cccccc;
     background-repeat: no-repeat;
@@ -78,7 +78,7 @@
 
 @supports (display: grid){
     
-    .hairstyles {
+    #hairstyles {
         display: grid;
         grid-template-columns: 1fr;
         gap: 0px;
@@ -97,20 +97,20 @@
 
 }
 @media all and (max-width: 500px) {
-    .hairstyles {
+    #hairstyles {
         grid-template-columns: 1fr;
     }
 
 }
 
 @media all and (min-width: 500px) and (max-width: 750px){
-    .hairstyles {
+    #hairstyles {
         grid-template-columns: 1fr;
     }
 }
 
 @media all and (max-width: 750px) {
-    .hairstyles {
+    #hairstyles {
         gap: 10px;
     }
     .style__list:last-child {

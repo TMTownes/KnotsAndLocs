@@ -4,29 +4,34 @@ let styleRepository = (function () {
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
     
       //add check for correct formatting
-      function add(styles) {
+      function add(pokemon) {
         if (
-          typeof styles === "object" &&
-          "name" in styles &&
-          "price" in styles &&
-          "type" in styles
+          // typeof styles === "object" &&
+          // "name" in styles &&
+          // "price" in styles &&
+          // "type" in styles
+          typeof pokemon === "object" 
+          // &&
+          // "name" in pokemon &&
+          // "height" in pokemon &&
+          // "type" in pokemon
           ) {
-          styleList.push(styles);
+          styleList.push(pokemon);
         } else {
           console.log("Incorrect style");
         }
       }
       //add listItem
-      function addListItem(styles){
+      function addListItem(pokemon){
           let styleList = document.querySelector(".style__list");
           let listItem = document.createElement("li");
           //Add button to styleList
           let button = document.createElement("button");
-          button.innerText = styles.name;
+          button.innerText = pokemon.name;
           button.classList.add("style-button");
           listItem.appendChild(button);
           styleList.appendChild(listItem);
-          addButtonListener(button, styles);
+          addButtonListener(button, pokemon);
 
           //Add img to styleList
           //let img = document.createElement("img");
@@ -36,15 +41,15 @@ let styleRepository = (function () {
       }
 
       //Event to show more details from listItem button
-      function addButtonListener (button, styles) {
+      function addButtonListener (button, pokemon) {
         button.addEventListener('click', function(){
-            showDetails(styles);
+            showDetails(pokemon);
           });
       }
 
-      function showDetails(styles){
-        loadDetails(styles).then(function(){
-          console.log(styles);
+      function showDetails(pokemon){
+        loadDetails(pokemon).then(function(){
+          console.log(pokemon);
         });
       }
 
@@ -59,11 +64,11 @@ let styleRepository = (function () {
           return response.json();
         }).then(function(json){
           json.results.forEach(function (item){
-            let styles = {
+            let pokemon = {
               name: item.name,
               detailsUrl: item.url
             };
-            add(styles);
+            add(pokemon);
           });
         }).catch(function (e){
           console.error(e);
@@ -101,8 +106,8 @@ let styleRepository = (function () {
   
   //Data is loaded
   styleRepository.loadList().then(function(){
-    styleRepository.getAll().forEach(function(styles){
-    styleRepository.addListItem(styles);
+    styleRepository.getAll().forEach(function(pokemon){
+    styleRepository.addListItem(pokemon);
   }); 
   });
  

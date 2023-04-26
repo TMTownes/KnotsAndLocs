@@ -68,7 +68,7 @@ let styleRepository = (function () {
               name: item.name,
               detailsUrl: item.url
             };
-            add(pokemon);
+            addListItem(pokemon);
           });
         }).catch(function (e){
           console.error(e);
@@ -82,7 +82,7 @@ let styleRepository = (function () {
           return response.json();
         }).then(function (details){
           //add the details of each item
-          item.imageUrl= details.sprities.front_default;
+          item.imageUrl= details.sprites.front_default;
           item.height = details.height;
           item.types= details.types;
         }).catch(function (e){

@@ -49,9 +49,74 @@ let styleRepository = (function () {
 
       function showDetails(pokemon){
         loadDetails(pokemon).then(function(){
-          console.log(pokemon);
+          showModal(pokemon);
         });
       }
+
+      let pokemonContainer = document.querySelector('#hairstyles');
+      let dialogPromiseReject;
+
+      //modal function
+      function showModal(pokemon){
+        styleRepository.loadDetails(pokemon).then(function(){
+          
+          pokemonContainer.innerHTML = '';
+
+          let modal = document.createElement('div');
+          modal.classList.add('modal');
+          
+          //Title details
+          let pokemonTitle = document.createElement('h1');
+          pokemonTitle.innerText = pokemon.name;
+          
+          //Image details
+          let pokemonImg = document.createElement('img');
+          let imageContainer = document.querySelector('.image-container');
+          pokemonImg.src = pokemon.imageUrl;
+          pokemonImg.classList.add('pokemon-img');
+          imageContainer.innerHTML = '';
+
+          //Height details
+          let pokemonHeight = document.createElement('p');
+          pokemonHeight.innerText = "Height: " + pokemon.height;
+
+          //modal close button
+          let closeButtonElement = document.createElement('button');
+          closeButtonElement.classList.add('modal-close');
+          closeButtonElement.innerText = 'Close';
+          closeButtonElement.addEventListener('click', hideModal);
+
+
+          modal.appendChild(pokemonTitle);
+          modal.appendChild(pokemonImg);
+          modal.appendChild(pokemonHeight);
+          pokemonContainer.appendChild(modal);
+
+          pokemonContainer.classList.add('is-visible');
+
+        });
+      }
+
+        function hideModal(){
+          pokemonContainer.classList.remove('is-visible'); 
+
+          if(dialogPromiseReject){
+            dialogPromiseReject();
+            dialogPromiseReject = null;
+          }
+        }
+
+      
+
+      document.querySelector('#pokemon-container').addEventListener('click', () => {
+        showModal(pokemon);
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && pokemonContainer.classList.contains('is-visible')){
+          hideModal();
+        }
+      });
 
       function getAll() {
         return styleList;
@@ -97,7 +162,8 @@ let styleRepository = (function () {
         showDetails: showDetails,
         addButtonListener: addButtonListener,
         loadList: loadList,
-        loadDetails: loadDetails
+        loadDetails: loadDetails,
+        showModal: showModal
     }
   })();
   console.log(styleRepository.getAll());
@@ -111,8 +177,6 @@ let styleRepository = (function () {
   }); 
   });
  
-  
-  //Show more information
   
   
   // Obejct.keys(someObject)- displays array of all properties

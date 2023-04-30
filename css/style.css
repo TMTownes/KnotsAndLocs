@@ -69,11 +69,45 @@
     opacity: .8;
 }
 
-#hairstyles {
+.hairstyles {
     background-image: url("./img/wooden-background2.avif");
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+
+.style__list.is-visible {
+    background-color: var(--primary-color);
+    padding: 10px;
+    box-sizing: border-box;
+    width: 50%;
+    height: auto;
+    z-index: 999;
+
+}
+
+/* .style__list{
+    background-color: var(--primary-color);
+} */
+
+.pokemon-container {
+    margin: auto;
+    display: inline-block;
+    width: 50%;
+}
+
+.modal-close{
+    /* float: right; */
+    background: none;
+    color: #777;
+    text-decoration: underline;
+}
+
+.modal p {
+    color: #777;
+    background-color: var(--primary-color);
+    margin-bottom: 0;
 }
 
 @supports (display: grid){
@@ -97,20 +131,20 @@
 
 }
 @media all and (max-width: 500px) {
-    #hairstyles {
+    .hairstyles {
         grid-template-columns: 1fr;
     }
 
 }
 
 @media all and (min-width: 500px) and (max-width: 750px){
-    #hairstyles {
+    .hairstyles {
         grid-template-columns: 1fr;
     }
 }
 
 @media all and (max-width: 750px) {
-    #hairstyles {
+    .hairstyles {
         gap: 10px;
     }
     .style__list:last-child {

@@ -54,16 +54,17 @@ let styleRepository = (function () {
       }
 
       let pokemonContainer = document.querySelector('.style__list');
+      let modalContainer = document.querySelector('#modal-container');
       let dialogPromiseReject;
 
       //modal function
       function showModal(pokemon){
         styleRepository.loadDetails(pokemon).then(function(){
           
-          pokemonContainer.innerHTML = '';
+          modalContainer.innerHTML = '';
 
           let modal = document.createElement('div');
-          modal.classList.add('pokemon-container');
+          modal.classList.add('modal');
           
           //Title details
           let pokemonTitle = document.createElement('h1');
@@ -71,10 +72,8 @@ let styleRepository = (function () {
           
           //Image details
           let pokemonImg = document.createElement('img');
-          // let imageContainer = document.querySelector('.image-container');
           pokemonImg.src = pokemon.imageUrl;
           pokemonImg.classList.add('pokemon-img');
-          // imageContainer.innerHTML = '';
 
           //Height details
           let pokemonHeight = document.createElement('p');
@@ -91,15 +90,15 @@ let styleRepository = (function () {
           modal.appendChild(pokemonImg);
           modal.appendChild(pokemonHeight);
           modal.appendChild(closeButtonElement);
-          pokemonContainer.appendChild(modal);
+          modalContainer.appendChild(modal);
 
-          pokemonContainer.classList.add('is-visible');
+          modalContainer.classList.add('is-visible');
 
         });
       }
-
+        //hide modal function
         function hideModal(){
-          pokemonContainer.classList.remove('is-visible'); 
+          modalContainer.classList.remove('is-visible'); 
 
           if(dialogPromiseReject){
             dialogPromiseReject();
@@ -119,7 +118,7 @@ let styleRepository = (function () {
         }
       });
 
-      pokemonContainer.addEventListener('click', (e) => {
+      modalContainer.addEventListener('click', (e) => {
         let target = e.target;
         if(target === pokemonContainer){
           hideModal();

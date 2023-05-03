@@ -21,6 +21,8 @@ let styleRepository = (function () {
           console.log("Incorrect style");
         }
       }
+
+      
       //add listItem
       function addListItem(pokemon){
           let styleList = document.querySelector(".style__list");
@@ -105,12 +107,6 @@ let styleRepository = (function () {
             dialogPromiseReject = null;
           }
         }
-
-      
-
-      // document.querySelector('#pokemon-container').addEventListener('click', () => {
-      //   showModal(pokemon);
-      // });
 
       window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && pokemonContainer.classList.contains('is-visible')){

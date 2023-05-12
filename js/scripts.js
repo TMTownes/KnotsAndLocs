@@ -30,7 +30,8 @@ let styleRepository = (function () {
           //Add button to styleList
           let button = document.createElement("button");
           button.innerText = pokemon.name;
-          button.classList.add("style-button");
+          button.classList.add("style-button", "btn");
+          listItem.classList.add('list-group-item');
           listItem.appendChild(button);
           styleList.appendChild(listItem);
           addButtonListener(button, pokemon);

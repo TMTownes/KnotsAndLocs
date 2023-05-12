@@ -27,10 +27,16 @@ let styleRepository = (function () {
       function addListItem(pokemon){
           let styleList = document.querySelector(".style__list");
           let listItem = document.createElement("li");
+
           //Add button to styleList
           let button = document.createElement("button");
+
+          button.setAttribute('data-toggle', 'modal');
+          button.setAttribute('data-target', '#modal-container');
           button.innerText = pokemon.name;
-          button.classList.add("style-button", "btn");
+          button.classList.add("style-button", 
+            "btn",
+            "show-modal");
           listItem.classList.add('list-group-item');
           listItem.appendChild(button);
           styleList.appendChild(listItem);
@@ -85,6 +91,7 @@ let styleRepository = (function () {
           //modal close button
           let closeButtonElement = document.createElement('button');
           closeButtonElement.classList.add('modal-close');
+          closeButtonElement.setAttribute('data-dismiss', 'modal');
           closeButtonElement.innerText = 'Close';
           closeButtonElement.addEventListener('click', hideModal);
 
@@ -101,7 +108,7 @@ let styleRepository = (function () {
       }
         //hide modal function
         function hideModal(){
-          modalContainer.classList.remove('is-visible'); 
+          modalContainer.classList.remove('is-visible');
 
           if(dialogPromiseReject){
             dialogPromiseReject();

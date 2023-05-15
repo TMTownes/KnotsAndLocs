@@ -98,16 +98,16 @@
 }
 
 .modal {
-    margin: auto;
+    margin: 50px;
     display: inline-block;
     box-sizing: border-box;
     border-width: thick;
     border-style: solid;
     border-color: var(--secondary-color);
     background: rgb(123, 35, 35);
-    padding: 15px;
-    width: 100%;
-    max-width: 700px;
+    padding: 25px;
+    max-width: 90%;
+    /* width: 80%; */
     text-align: left;
 }
 
@@ -117,6 +117,10 @@
     background: none;
     color: #777;
     text-decoration: underline;
+}
+
+.modal-backdrop{
+    z-index: -1;
 }
 
 .modal h1 {

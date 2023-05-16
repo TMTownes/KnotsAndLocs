@@ -112,6 +112,7 @@ let styleRepository = (function () {
         //hide modal function
         function hideModal(){
           modalContainer.classList.remove('is-visible');
+          modalContainer.classList.remove('show');
 
           if(dialogPromiseReject){
             dialogPromiseReject();

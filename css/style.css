@@ -111,6 +111,7 @@
     background: rgb(123, 35, 35);
     padding: 25px;
     max-width: 90%;
+    height: auto;
     /* width: 80%; */
     text-align: left;
 }

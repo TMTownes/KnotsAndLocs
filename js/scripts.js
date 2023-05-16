@@ -23,6 +23,7 @@ let styleRepository = (function () {
       }
 
       
+      
       //add listItem
       function addListItem(pokemon){
           let styleList = document.querySelector(".style__list");
@@ -33,7 +34,8 @@ let styleRepository = (function () {
 
           button.setAttribute('data-toggle', 'modal');
           button.setAttribute('data-target', '#modal-container');
-          button.innerText = pokemon.name;
+          let capitalized = pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1);
+          button.innerText = capitalized;
           button.classList.add("style-button", 
             "btn",
             "show-modal");
@@ -77,7 +79,8 @@ let styleRepository = (function () {
           
           //Title details
           let pokemonTitle = document.createElement('h1');
-          pokemonTitle.innerText = pokemon.name;
+          let capitalized = pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1);
+          pokemonTitle.innerText = capitalized;
           
           //Image details
           let pokemonImg = document.createElement('img');

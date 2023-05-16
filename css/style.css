@@ -24,9 +24,13 @@
     display: inline;
     margin: 10px;
     margin-top: 10px;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     color: var(--primary-color);
     font-size: 70px;
+}
+
+.navbar-nav{
+    text-decoration: none;
 }
 
 .page__allBraids-img {

@@ -4,9 +4,17 @@
         "browser": true
     },
     "extends": [
-        "eslint:recommended"
-    ],
+        "prettier"],
+    "pluggins":["prettier"],
     "rules": {
-        "quotes": ["error", "single"]
+        "prettier/prettier": ["error"],
+        "quotes": ["error", "single"],
+        "no-debugger": "off",
+        "editor.defaultFormatter": "<another formatter>", 
+        "[javascript]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        }
     }
+   
+    
 }

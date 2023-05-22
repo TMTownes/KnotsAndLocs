@@ -13,6 +13,6 @@ module.exports = {
   },
   rules: {
     /* eslint-disable prefer-const */
-    semi: [2, 'always']
+    semi: [2, 'always'],
   }
 };
